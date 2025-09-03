@@ -1,0 +1,31 @@
+// Fuentes
+$mainFont: 'Roboto', sans-serif;
+
+// Tamaño de Media Queries
+$mobile: 480px;
+$tablet: 768px;
+$largeTablet: 900px;
+$desktop: 1024px;
+
+// Colores
+$primaryColor: #5AEACD;
+// $secondaryColor: #eb9f58;
+$black: #1E1E1E;
+$white: #FFFFFF;
+$gray: #555;
+$grayLight: rgba(130, 130, 130, 0.5);
+$grayLight2: rgba(230, 230, 230, 0.5);
+$filterBG: rgba(0, 0, 0, 0.6);
+
+// Tamaño de fuentes
+$fontSize: 1.6rem;
+
+$fontSizeSmall: 1.4rem;
+$fontSizeMedium: 2rem;
+$fontSizeLarge: 2.8rem;
+$fontSizeXLarge: 4rem;
+
+// Tamaño de contenedor
+$max-width-desktop: 1200px;
+$max-width-mobile: 90%;
+$max-width-tablet: 80%;

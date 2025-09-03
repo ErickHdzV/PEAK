@@ -1,0 +1,57 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.testimonials_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin: 5rem auto 10rem auto;
+
+  @media screen and (max-width: v.$tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1rem;
+    margin: 0 auto;
+  }
+}
+
+.testimonials_item {
+  justify-content: center;
+  text-align: center;
+  background-color: v.$grayLight2;
+  padding: 2rem;
+
+  @media screen and (max-width: v.$tablet) {
+    margin-top: 5rem;
+  }
+}
+
+.testimonials_item_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonials_item_header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonials_item_img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonials_item_author {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.testimonials_item_content p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: v.$gray;
+  margin-top: 2rem;
+}

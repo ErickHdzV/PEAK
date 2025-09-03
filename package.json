@@ -1,0 +1,18 @@
+{
+  "name": "peak",
+  "version": "1.0.0",
+  "description": "PEAK productos y clinica de ozonoterapia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick HV",
+  "keywords": [
+    "ozonoterapia",
+    "ozono",
+    "ozonoterapia",
+    "ozonoterapia clinica",
+    "ozonoterapia productos"
+  ],
+  "license": "ISC"
+}

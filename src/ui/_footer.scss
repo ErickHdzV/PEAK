@@ -1,0 +1,96 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: v.$black;
+  color: v.$white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer_content {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  @media screen and (max-width: v.$tablet) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 0;
+  }
+}
+
+.footer_logo {
+  width: 100%;
+  max-width: 10rem;
+
+  @media screen and (max-width: v.$tablet) {
+    max-width: 8rem;
+  }
+}
+
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (max-width: v.$tablet) {
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+.footer_links a:hover {
+  color: v.$primaryColor;
+}
+
+.footer_socials-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+
+  @media screen and (max-width: v.$tablet) {
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2.5rem 0;
+  }
+}
+
+.footer_socials-media a:hover {
+  color: v.$primaryColor;
+}
+
+.footer_address p {
+  font-size: 1.6rem;
+  line-height: 1;
+
+  @media screen and (max-width: v.$tablet) {
+    font-size: 1.4rem;
+    padding: 0 2rem;
+  }
+}
+
+.footer_copy {
+  letter-spacing: 1px;
+  font-size: 1rem;
+  margin-top: 5rem;
+
+  @media screen and (max-width: v.$tablet) {
+    font-size: 1.2rem;
+    padding: 0 2rem;
+  }
+}
+
+.footer_copy a {
+  color: v.$primaryColor;
+  text-decoration: none;
+}

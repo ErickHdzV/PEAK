@@ -1,0 +1,90 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.subtitle_benefits {
+  max-width: 28rem;
+  font-size: 3.6rem;
+  display: inline-block;
+  margin-top: 10rem;
+  text-align: center;
+
+  @media screen and (max-width: v.$largeTablet) {
+    /* margin-top: 5rem; */
+    /* max-width: 28rem; */
+  }
+
+  &::before {
+    content: "";
+    background-color: v.$primaryColor;
+    height: 1rem;
+    width: calc(100% + 1rem);
+    display: block;
+    margin: 0 0 -3.9rem 0;
+  }
+
+  &::after {
+    content: "";
+    background-color: v.$primaryColor;
+    height: 1rem;
+    width: calc(100% + 1rem);
+    display: block;
+    margin: -1.4rem 0 0 0;
+  }
+}
+
+.benefits {
+  &__content {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 5rem 0;
+    /* padding: 0 2rem; */
+
+    @media screen and (max-width: v.$largeTablet) {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 5rem;
+      padding: 0;
+      margin-top: 3rem;
+    }
+  }
+
+  &__item {
+    background-color: v.$white;
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 5rem 0;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      box-shadow: 0 0 1rem v.$grayLight;
+      background-color: v.$primaryColor;
+      transition: all 0.5s ease-in-out;
+
+      @media screen and (max-width: v.$largeTablet) {
+        transform: scale(1.05);
+      }
+    }
+
+  }
+
+  &__item__img {
+    margin: 0 auto;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__item__title {
+    font-size: 2.4rem;
+    font-weight: lighter;
+    padding-top: 1rem;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+}
+

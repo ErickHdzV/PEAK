@@ -1,0 +1,80 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    /* font-family: v.$fuente_principal; */
+    font-family: v.$mainFont;
+    font-size: 1.6rem;
+    margin: auto;
+  }
+  
+  p {
+    /* color: v.$negro; */
+    font-size: 2rem;
+    line-height: 2;
+  }
+  
+  .container {
+    width: 95%;
+    // max-width: 1200px;
+    max-width: v.$max-width-desktop;
+    margin: 0 auto;
+  
+    @media screen and (max-width: v.$desktop) {
+      width: 100%;
+      max-width: v.$max-width-tablet;
+    }
+
+    @media screen and (max-width: v.$mobile) {
+      width: 100%;
+      max-width: v.$max-width-mobile;
+    }
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    margin: 0 0 2rem 0;
+  }
+  
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h3 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    margin: 0 0 2rem 0;
+  }
+  
+  button {
+    border: none;
+  }

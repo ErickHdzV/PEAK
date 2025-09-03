@@ -1,0 +1,169 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+/* Estilos para la línea de tiempo */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+  gap: 5rem;
+  padding: 5rem 0;
+
+  @media screen and (max-width: v.$tablet) {
+    padding: 0;
+    gap: 2rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: v.$grayLight;
+  
+    @media screen and (max-width: v.$tablet) {
+      display: none; /* Ocultar la línea en pantallas pequeñas */
+    }
+  }
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @media screen and (max-width: v.$tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5rem; /* Espacio entre los elementos de la línea de tiempo */
+  }
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item:nth-child(even) {
+  justify-content: flex-start;
+
+  @media screen and (max-width: v.$tablet) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.timeline-item:nth-child(odd) {
+  justify-content: flex-end;
+
+  @media screen and (max-width: v.$tablet) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.timeline-year {
+  font-size: v.$fontSizeMedium;
+  color: v.$gray;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: v.$tablet) {
+    font-size: 2.4rem;
+    font-weight: bold;
+    position: static;
+    margin-bottom: 5rem; /* Espacio entre el año y el contenido */
+  }
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+  right: calc(50% + 2rem);
+
+  @media screen and (max-width: v.$tablet) {
+    margin-bottom: 0; /* Eliminar el margen inferior en pantallas pequeñas */
+  }
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+  left: calc(50% + 2rem);
+
+  @media screen and (max-width: v.$tablet) {
+    margin-bottom: 0; /* Eliminar el margen inferior en pantallas pequeñas */
+  }
+}
+
+.timeline-dot {
+  width: 1rem;
+  height: 1rem;
+  // background-color: v.$grayLight;
+  background-color: rgba(130, 130, 130, 1);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 768px) {
+    display: none; /* Ocultar el punto en pantallas pequeñas */
+  }
+}
+
+.timeline-item-content {
+  background-color: v.$white;
+  border-radius: 0.5rem;
+  max-width: 40rem;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    margin: 0 auto; /* Centrar el contenido en pantallas pequeñas */
+  }
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content {
+  /* margin-right: auto; */
+  margin-right: calc(50% + 10rem);
+  text-align: left;
+
+  @media screen and (max-width: 768px) {
+    margin-right: 0; /* Eliminar el margen derecho en pantallas pequeñas */
+  }
+}
+
+.timeline-item:nth-child(even) .timeline-item-content {
+  /* margin-left: auto; */
+  margin-left: calc(
+    50% + 12rem
+  ); /* Ajusta el margen izquierdo para centrar el contenido */
+  text-align: left;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+  }
+}
+
+.timeline-item-content h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: left;
+
+  @media screen and (max-width: 768px) {
+    text-align: center; /* Centrar el texto en pantallas pequeñas */
+  }
+}
+
+.timeline-item-content p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: v.$gray;
+
+  @media screen and (max-width: 768px) {
+    text-align: center; /* Centrar el texto en pantallas pequeñas */
+  }
+}
